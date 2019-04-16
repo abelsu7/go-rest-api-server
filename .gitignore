@@ -13,3 +13,9 @@
 
 # IDEA Settings
 .idea/*
+
+# Log file
+log/*
+
+# built executable apiserver program
+apiserver
