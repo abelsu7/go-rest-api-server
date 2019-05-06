@@ -14,6 +14,9 @@
 # IDEA Settings
 .idea/*
 
+# VS Code Settings
+.vscode/*
+
 # Log file
 log/*
 
