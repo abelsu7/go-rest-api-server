@@ -6,3 +6,15 @@ Content-Type: application/json
     "username":"admin",
     "password":"admin"
 }
+
+###
+GET http://127.0.0.1:8080/sd/health HTTP/1.1
+
+###
+GET http://127.0.0.1:8080/sd/cpu HTTP/1.1
+
+###
+GET http://127.0.0.1:8080/sd/disk HTTP/1.1
+
+###
+GET http://127.0.0.1:8080/sd/ram HTTP/1.1
