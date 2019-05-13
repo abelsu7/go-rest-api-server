@@ -3,18 +3,37 @@ Content-Type: application/json
 
 
 {
-    "username":"admin",
-    "password":"admin"
+    "username":"abel",
+    "password":"123456"
 }
 
-###
-GET http://127.0.0.1:8080/sd/health HTTP/1.1
+### Get users list
 
-###
-GET http://127.0.0.1:8080/sd/cpu HTTP/1.1
+GET http://127.0.0.1:8080/v1/user HTTP/1.1
+Content-Type: application/json
 
-###
-GET http://127.0.0.1:8080/sd/disk HTTP/1.1
+{
+    "offset": 0,
+    "limit": 20
+}
 
-###
-GET http://127.0.0.1:8080/sd/ram HTTP/1.1
+### Get user according to name
+
+GET http://127.0.0.1:8080/v1/user/abel HTTP/1.1
+Content-Type: application/json
+
+### Update user
+
+PUT http://127.0.0.1:8080/v1/user/9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "abel-modify",
+    "password": "19950404-haha"
+}
+
+### Delete a user
+
+DELETE http://127.0.0.1:8080/v1/user/11 HTTP/1.1
+Content-Type: application/json
+

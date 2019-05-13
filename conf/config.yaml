@@ -1,5 +1,5 @@
 runmode: debug      # 开发模式，debug/release/test
-addr: :8080          # HTTP 绑定端口
+addr: :8080         # HTTP 绑定端口
 name: apiserver     # API Server 的名字
 url: http://127.0.0.1:8080  # pingServer 函数请求的 API 服务器的 ip:port
 max_ping_count: 10  # pingServer 函数 try 的次数
@@ -12,6 +12,7 @@ log:
   log_rotate_date: 1
   log_rotate_size: 1024
   log_backup_count: 7
+gormlog: true  # 开启 gorm 日志
 db:
   name: db_apiserver
   addr: 127.0.0.1:3306

@@ -1,6 +1,8 @@
 package user
 
 import (
+	"strconv"
+
 	. "apiserver/handler"
 	"apiserver/model"
 	"apiserver/pkg/errno"
@@ -11,19 +13,22 @@ import (
 	"github.com/lexkong/log/lager"
 )
 
-// Create creates a new user account.
-func Create(c *gin.Context) {
-	log.Info("User Create function called.", lager.Data{"X-Request-Id": util.GetReqId(c)})
-	var r CreateRequest
-	if err := c.Bind(&r); err != nil {
+// Update update an exist user account info.
+func Update(c *gin.Context) {
+	log.Info("Update function called.", lager.Data{"X-Request-Id": util.GetReqId(c)})
+
+	// Get the user id from the url parameter.
+	userId, _ := strconv.Atoi(c.Param("id"))
+
+	// Binding the user data.
+	var u model.UserModel
+	if err := c.Bind(&u); err != nil {
 		SendResponse(c, errno.ErrBind, nil)
 		return
 	}
 
-	u := model.UserModel{
-		Username: r.Username,
-		Password: r.Password,
-	}
+	// We update the record based on the user id.
+	u.Id = uint64(userId)
 
 	// Validate the data.
 	if err := u.Validate(); err != nil {
@@ -37,16 +42,11 @@ func Create(c *gin.Context) {
 		return
 	}
 
-	// Insert the user to the database.
-	if err := u.Create(); err != nil {
+	// Save changed fields.
+	if err := u.Update(); err != nil {
 		SendResponse(c, errno.ErrDatebase, nil)
 		return
 	}
 
-	rsp := CreateResponse{
-		Username: r.Username,
-	}
-
-	// Show the user information.
-	SendResponse(c, nil, rsp)
+	SendResponse(c, nil, nil)
 }

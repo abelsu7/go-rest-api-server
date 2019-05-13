@@ -28,7 +28,7 @@ func (err *Err) Add(message string) error {
 }
 
 func (err *Err) Addf(format string, args ...interface{}) error {
-	err.Message += fmt.Sprintf(format, args...)
+	err.Message += " " + fmt.Sprintf(format, args...)
 	return err
 }
 

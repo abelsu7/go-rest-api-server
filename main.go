@@ -60,6 +60,7 @@ func main() {
 	log.Info(http.ListenAndServe(viper.GetString("addr"), g).Error())
 }
 
+// pingServer pings the http server to make sure the router is working.
 func pingServer() error {
 	for i := 0; i < viper.GetInt("max_ping_count"); i++ {
 		// Ping the server by sending a GET request to `/health`.
