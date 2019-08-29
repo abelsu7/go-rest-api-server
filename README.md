@@ -9,7 +9,7 @@
 
 `db.sql`:
 
-```mysql
+```sql
 CREATE DATABASE IF NOT EXISTS `db_apiserver` DEFAULT CHARACTER SET utf8;
 
 USE `db_apiserver`;
