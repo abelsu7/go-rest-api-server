@@ -7,7 +7,7 @@ import (
 	"apiserver/pkg/auth"
 	"apiserver/pkg/constvar"
 
-	"github.com/lexkong/log"
+	"github.com/abelsu7/log"
 	validator "gopkg.in/go-playground/validator.v9"
 )
 

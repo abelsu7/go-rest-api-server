@@ -8,9 +8,9 @@ import (
 	"apiserver/pkg/errno"
 	"apiserver/util"
 
+	"github.com/abelsu7/log"
+	"github.com/abelsu7/log/lager"
 	"github.com/gin-gonic/gin"
-	"github.com/lexkong/log"
-	"github.com/lexkong/log/lager"
 )
 
 // Update update an exist user account info.

@@ -4,7 +4,7 @@ import (
 	"strings"
 
 	"github.com/fsnotify/fsnotify"
-	"github.com/lexkong/log"
+	"github.com/abelsu7/log"
 	"github.com/spf13/viper"
 )
 
