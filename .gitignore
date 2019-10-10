@@ -23,3 +23,6 @@ log/*
 
 # built executable apiserver program
 apiserver
+
+# api.http
+test/api.http
