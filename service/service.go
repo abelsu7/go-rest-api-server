@@ -48,8 +48,8 @@ func ListUser(username string, offset, limit int) ([]*model.UserInfo, uint64, er
 				Username:  u.Username,
 				SayHello:  fmt.Sprintf("Hello %s", shortId),
 				Password:  u.Password,
-				CreatedAt: u.CreatedAt.Format("2008-08-08 18:08:08"),
-				UpdatedAt: u.UpdatedAt.Format("2008-08-08 18:08:08"),
+				CreatedAt: u.CreatedAt.Format("2006-01-02 15:04:05"),
+				UpdatedAt: u.UpdatedAt.Format("2006-01-02 15:04:05"),
 			}
 		}(u)
 	}
