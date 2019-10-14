@@ -9,8 +9,8 @@ import (
 	"apiserver/model"
 	"apiserver/router"
 
-	"github.com/gin-gonic/gin"
 	"github.com/abelsu7/log"
+	"github.com/gin-gonic/gin"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
 )

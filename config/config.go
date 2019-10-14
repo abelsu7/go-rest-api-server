@@ -3,8 +3,8 @@ package config
 import (
 	"strings"
 
-	"github.com/fsnotify/fsnotify"
 	"github.com/abelsu7/log"
+	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 )
 
